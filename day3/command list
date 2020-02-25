@@ -1,0 +1,12 @@
+create table codegroup (cid int not null, codegroup varchar(30) not null, count int );
+
+load data local infile '<path>' into table <table name> fields terminated by ',' lines terminated by '\n' ignore 1 rows (<attribute>);
+
+
+2. i.
+	select * from contributor c1 where exists ( select cid from codegroup c2 where c1.cid = c2.cid and c2.codegroup != 'java');
+
+ii.
+	select * from contributor c1 where exists ( select cid from codegroup c2 where c1.cid = c2.cid and c2.codegroup != 'c' and c2.count <10);
+iii.
+	
